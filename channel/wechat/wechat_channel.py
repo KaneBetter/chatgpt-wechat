@@ -94,7 +94,7 @@ class WechatChannel(ChatChannel):
 
     def startup(self):
 
-        itchat.instance.receivingRetryCount = 600  # 修改断线超时时间
+        itchat.instance.receivingRetryCount = 3600  # 修改断线超时时间
         # login by scan QRCode
         hotReload = conf().get('hot_reload', False)
         try:
