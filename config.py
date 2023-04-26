@@ -95,6 +95,10 @@ available_setting = {
 
     # 插件配置
     "plugin_trigger_prefix": "$",  # 规范插件提供聊天相关指令的前缀，建议不要和管理员指令前缀"#"冲突
+
+    # Keep live
+    "time_gap": 30,  # 间隔多少秒检查一次是否需要保持在线
+    "keeplive_id": "ChatGPT",  # 保持在线的id，用于微信通知
 }
 
 
