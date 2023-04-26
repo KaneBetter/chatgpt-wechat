@@ -184,7 +184,6 @@ def load_config():
                     config[name] = True
                 else:
                     config[name] = value
-
     if config.get("debug", False):
         logger.setLevel(logging.DEBUG)
         logger.debug("[INIT] set log level to DEBUG")        

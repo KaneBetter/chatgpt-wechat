@@ -1,4 +1,4 @@
-FROM ghcr.io/zhayujie/chatgpt-on-wechat:latest
+FROM kanechen/chatgpt-on-wechat:latest
 
 ARG OPEN_AI_API_KEY
 ARG OPEN_AI_PROXY
