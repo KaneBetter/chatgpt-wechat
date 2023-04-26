@@ -90,7 +90,21 @@ class WechatChannel(ChatChannel):
     NOT_SUPPORT_REPLYTYPE = []
     def __init__(self):
         super().__init__()
-        self.receivedMsgs = ExpiredDict(60*60*24) 
+        self.receivedMsgs = ExpiredDict(60*60*24)
+        self.keepliveID = "@da154507f371ea5edb38a7bae07c8cbbbacee469a2ab302a9d3b50a8ada41c74"
+        # run keeplive thread
+        _thread = threading.Thread(target=self.keeplive)
+        _thread.setDaemon(True)
+        _thread.start()
+
+    def keeplive(self):
+        while True:
+            #Read this time gap from envriment variable: TIME_GAP
+            time_gap = conf().get('time_gap', 600)
+            time.sleep(secs=time_gap)
+            #get current time
+            now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            itchat.send_msg(now, toUserName=self.keppliveID)
 
     def startup(self):
 
