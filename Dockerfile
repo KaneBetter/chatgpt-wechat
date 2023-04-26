@@ -1,4 +1,4 @@
-FROM kanechen/chatgpt-on-wechat:latest
+FROM ghcr.io/zhayujie/chatgpt-on-wechat:latest
 
 ARG OPEN_AI_API_KEY
 ARG OPEN_AI_PROXY
@@ -11,7 +11,5 @@ ARG CONVERSATION_MAX_TOKENS
 ARG SPEECH_RECOGNITION
 ARG CHARACTER_DESC
 ARG EXPIRES_IN_SECONDS
-ARG TIME_GAP
-ARG KEEPLIVE_ID
 
 ENTRYPOINT ["/entrypoint.sh"]
