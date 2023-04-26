@@ -98,6 +98,8 @@ class WechatChannel(ChatChannel):
 
     def keeplive(self):
         keppliveID = conf().get('keeplive_id')
+        #logger keypliveID
+        logger.info('[WX] keepliveID={}'.format(keppliveID))
         while True:
             #Read this time gap from envriment variable: TIME_GAP
             time_gap = conf().get('time_gap', 600)
