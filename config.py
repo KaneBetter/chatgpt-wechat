@@ -172,7 +172,7 @@ def load_config():
     for name, value in os.environ.items():
         name = name.lower()
         #logger name and value
-        logger.debug("[INIT] environ args: {}={}".format(name, value))
+        logger.info("[INIT] environ args: {}={}".format(name, value))
         if name in available_setting:
             logger.info(
                 "[INIT] override config by environ args: {}={}".format(name, value))
